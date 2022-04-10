@@ -1,16 +1,26 @@
 const express = require("express");
 const cors = require("cors");
+
 const app = express();
 
-//midleware
-app.use(express.json);
+app.use(express.json());
 app.use(cors());
 
-app.get("/", (req, res) => {
-	console.log("working");
-	res.send(":)");
+const validatePassword = require("./validatePassword");
+app.get("/signup", (req, res) => {
+	res.send(req.body);
 });
 
-app.listen(5000, () => {
-	console.log("listening on port 5000");
+app.post("/signup", (req, res) => {
+	const { username, password } = req.body;
+
+	const validPassword = validatePassword(password);
+
+	if (validPassword) {
+		res.send({ message: "Valid User" });
+	} else {
+		res.send({ error: "Invalid Password" });
+	}
 });
+
+app.listen(8080, () => console.log("listening on port 8080"));
