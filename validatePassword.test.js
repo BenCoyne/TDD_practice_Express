@@ -13,5 +13,9 @@ describe("validatePassword", () => {
 		it("returns false if password contains less than 1 letter char", () => {
 			expect(validatePassword("12345678")).toBe(false);
 		});
+
+		it("returns false if password contains less than 1 number char", () => {
+			expect(validatePassword("aaaaaaaa")).toBe(false);
+		});
 	});
 });
