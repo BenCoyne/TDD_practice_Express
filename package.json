@@ -1,0 +1,17 @@
+{
+	"name": "tddwithexpress",
+	"version": "1.0.0",
+	"description": "TDD with Express",
+	"main": "server.js",
+	"scripts": {
+		"test": "jest",
+		"start": "node server.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"cors": "^2.8.5",
+		"express": "^4.17.3"
+	}
+}
