@@ -12,6 +12,7 @@ describe("validatePassword", () => {
 	describe("when password is valid length", () => {
 		it("returns true given a password 8 chars or longer, a letter and a number", () => {
 			expect(validatePassword("a1234567")).toBe(true);
+			expect(validatePassword("A1234567")).toBe(true);
 		});
 
 		it("returns false if password contains less than 1 letter char", () => {
